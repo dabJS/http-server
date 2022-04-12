@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/dabJS/http-server/issues"
   },
-  "homepage": "https://github.com/dabJS/http-server#readme"
+  "homepage": "https://github.com/dabJS/http-server#readme",
+  "dependencies": {
+    "node": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.23"
+  }
 }

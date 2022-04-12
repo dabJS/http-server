@@ -1,1 +1,3 @@
-console.log('AQUI');
+export function hello() {
+  console.log('AQUI');
+}
