@@ -1,10 +1,13 @@
 {
   "name": "@dabjs/http-server",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The http module from dabJS",
-  "main": "index.js",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "tsc --build --clean",
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
