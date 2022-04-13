@@ -1,12 +1,12 @@
 {
   "name": "@dabjs/http-server",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "The http module from dabJS",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
     "clean": "tsc --build --clean",
-    "build": "rimraf dist && tsc -p . && cp ./tsconfig.json ./lib/tsconfig.json && cp ./prod-paths.js ./lib/prod-paths.js",
+    "build": "rimraf lib && tsc -p .",
     "prepublishOnly": "npm run build"
   },
   "nyc": {

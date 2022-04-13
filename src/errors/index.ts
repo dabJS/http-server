@@ -1,3 +1,3 @@
-export * from '@/errors/http-error';
-export * from '@/errors/bad-request';
-export * from '@/errors/not-found';
+export * from './http-error';
+export * from './bad-request';
+export * from './not-found';

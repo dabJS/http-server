@@ -14,9 +14,9 @@ import {
   Middleware,
   Controller,
   HttpServerConfig,
-} from '@/types';
-import { HttpError, BadRequest } from '@/errors';
-import { logger } from '@/logger';
+} from './types';
+import { HttpError, BadRequest } from './errors';
+import { logger } from './logger';
 
 export abstract class BaseHttp {
   protected controllers: Function[];

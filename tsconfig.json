@@ -9,10 +9,7 @@
     "outDir": "./lib",
     "esModuleInterop": true,
     "lib": ["es2020"],
-    "strict": true,
-    "paths": {
-      "@/*": ["*"]
-    }
+    "strict": true,    
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/__tests__/*"]

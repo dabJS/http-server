@@ -2,10 +2,10 @@ import express, { Router } from 'express';
 import helmet from 'helmet';
 import bodyParser from 'body-parser';
 import compression from 'compression';
-import { BaseHttp } from '@/base-http';
-import { NotFoundError } from '@/errors';
-import { logger } from '@/logger';
-import { Module, HttpServerConfig } from '@/types';
+import { BaseHttp } from './base-http';
+import { NotFoundError } from './errors';
+import { logger } from './logger';
+import { Module, HttpServerConfig } from './types';
 
 export class HttpServer extends BaseHttp implements Module {
   constructor(private readonly config: HttpServerConfig) {

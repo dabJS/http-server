@@ -1,4 +1,4 @@
-import { CodedError } from '@/types';
+import { CodedError } from '../types';
 
 export class HttpError extends CodedError {
   status_code: number;
