@@ -5,23 +5,26 @@ on:
     tags:
       - '*.*.*'
   workflow_dispatch:
-jobs:
-  publish:
-    runs-on: self-hosted
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: '0'
-        name: Checkout
-      - uses: actions/setup-node@v2.1.5
-        with:
-          registry-url: 'https://registry.npmjs.org'
-        name: Setup Node.js environment
-      - run: npm ci
-        name: Install Node dependencies
-      - run: npm run build
-        name: Build typescript
-      - run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        name: Publish package
+    jobs:
+      publish:
+        runs-on: ubuntu-latest
+        strategy:
+          matrix:
+            node-version: [16.x]
+        steps:
+          - uses: actions/checkout@v2
+            with:
+              fetch-depth: '0'
+            name: Checkout
+          - uses: actions/setup-node@v2.1.5
+            with:
+              registry-url: 'https://registry.npmjs.org'
+            name: Setup Node.js environment
+          - run: npm ci
+            name: Install Node dependencies
+          - run: npm run build
+            name: Build typescript
+          - run: npm publish --access public
+            env:
+              NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+            name: Publish package
