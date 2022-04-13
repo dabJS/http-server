@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Ongoing Changes
 
+## [1.1.0]
+
+### Added
+
+- Added express as http server and provider an interface to use controllers without directly link with express
+
 ## [1.0.2]
 
 ### Added

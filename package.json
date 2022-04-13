@@ -1,13 +1,29 @@
 {
   "name": "@dabjs/http-server",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "The http module from dabJS",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
     "clean": "tsc --build --clean",
-    "build": "tsc",
+    "build": "rimraf dist && tsc -p . && cp ./tsconfig.json ./lib/tsconfig.json && cp ./prod-paths.js ./lib/prod-paths.js",
     "prepublishOnly": "npm run build"
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "all": true,
+    "include": [
+      "src"
+    ],
+    "exclude": [
+      "**/*.d.ts"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ]
   },
   "files": [
     "lib/**/*"
@@ -23,9 +39,21 @@
   },
   "homepage": "https://github.com/dabJS/http-server#readme",
   "dependencies": {
-    "node": "^17.7.2"
+    "@somosphi/logger": "^1.6.0",
+    "bunyan-format": "^0.2.1",
+    "compression": "^1.7.4",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "helmet": "^5.0.2",
+    "joi": "^17.6.0",
+    "node": "^17.7.2",
+    "rimraf": "^3.0.2",
+    "tsyringe": "^4.6.0"
   },
   "devDependencies": {
+    "@types/bunyan-format": "^0.2.4",
+    "@types/compression": "^1.7.2",
+    "@types/express": "^4.17.13",
     "@types/node": "^17.0.23"
   }
 }
