@@ -1,6 +1,6 @@
 {
   "name": "@dabjs/http-server",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "The http module from dabJS",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -9,6 +9,9 @@
     "build": "tsc",
     "prepublishOnly": "npm run build"
   },
+  "files": [
+    "lib/**/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dabJS/http-server.git"
