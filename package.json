@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/dabJS/http-server#readme",
   "dependencies": {
-    "@dabjs/common": "^1.0.2",
+    "@dabjs/common": "^1.2.1",
     "@somosphi/logger": "^1.6.0",
     "bunyan-format": "^0.2.1",
     "compression": "^1.7.4",
