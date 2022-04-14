@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Ongoing Changes
 
+## [1.2.0]
+
+### Added
+
+- Changed http server config to accept port and body limit as segregate parameter
+
 ## [1.1.1]
 
 ### Added

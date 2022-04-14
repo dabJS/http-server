@@ -14,7 +14,7 @@ import {
   Middleware,
   Controller,
   HttpServerConfig,
-} from './types';
+} from '@dabjs/common';
 import { HttpError, BadRequest } from './errors';
 import { logger } from './logger';
 

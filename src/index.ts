@@ -1,11 +1,11 @@
 import express, { Router } from 'express';
+import { Module, HttpServerConfig } from '@dabjs/common';
 import helmet from 'helmet';
 import bodyParser from 'body-parser';
 import compression from 'compression';
 import { BaseHttp } from './base-http';
 import { NotFoundError } from './errors';
 import { logger } from './logger';
-import { Module, HttpServerConfig } from './types';
 
 export class HttpServer extends BaseHttp implements Module {
   constructor(private readonly config: HttpServerConfig) {
@@ -22,7 +22,7 @@ export class HttpServer extends BaseHttp implements Module {
     app.use(compression());
     app.use(
       bodyParser.json({
-        limit: this.config.env.http_body_limit,
+        limit: this.config.bodyLimit,
       })
     );
 
@@ -57,8 +57,8 @@ export class HttpServer extends BaseHttp implements Module {
     const error_handler = this.errorHandler() as any;
     app.use(error_handler);
 
-    app.listen(this.config.env.http_port, () =>
-      logger.info(`Server running on port ${this.config.env.http_port}`)
+    app.listen(this.config.port, () =>
+      logger.info(`Server running on port ${this.config.port}`)
     );
   }
 }
